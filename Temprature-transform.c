@@ -12,25 +12,27 @@ int main()
 {
     while(1)
     {
-        int LX,IPT,OT;
+        int LX,IPT;
+        double OT;
+
         //float OT;
         puts("请选择要转换的类型：（0表示华氏转摄氏,1表示摄氏转华氏）");
         scanf("%d",&LX);
         if (LX==0)
             {
                 printf("您输入的是华氏转摄氏！\n");
-                puts("请输入华氏温度");
+                printf("请输入华氏温度:");
                 scanf("%d",&IPT);
-                OT = 5/9*(IPT-32);
-                printf("华氏%d--->摄氏%d",IPT,OT);
+                OT = (double)5/9*(IPT-32);
+                printf("华氏%d--->摄氏%3.1f",IPT,OT);
             }
         else if(LX==1)
             {
                 printf("您输入的是摄氏转华氏！\n");
-                puts("请输入摄氏温度");
+                printf("请输入摄氏温度:");
                 scanf("%d",&IPT);
-                OT = IPT*9/5+32;
-                printf("摄氏%d--->华氏%f",IPT,OT);
+                OT = (double)IPT*9/5+32;
+                printf("摄氏%d--->华氏%3.1f",IPT,OT);
            }
 
         else
