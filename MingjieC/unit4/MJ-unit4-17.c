@@ -6,8 +6,8 @@ int main()
     int i,j,layer;
     printf("三角形有几层：");
     scanf("%d",&layer);
-    for(i=1;i<=layer;i++){
-        for(j=layer;j>0;j--){
+    for(i=layer;i>0;i--){
+        for(j=i;j>0;j--){
         printf("*");
         }
         printf("\n");
