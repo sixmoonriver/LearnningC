@@ -46,6 +46,7 @@ model.summary()
 
 train_datagen = ImageDataGenerator(rescale=1./255,rotation_range=45,width_shift_range=0.2,height_shift_range=0.2,horizontal_flip=True,fill_mode='nearest')
 validation_datagen = ImageDataGenerator(rescale=1./255)
+#下面batch_size原来为64，因为触发OOM，调整为32正常。显卡为GTX950 2G显存 
 train_generator = train_datagen.flow_from_directory(train_dir,target_size=(image_size,image_size),batch_size=32,class_mode='categorical')
 
 validation_generator = validation_datagen.flow_from_directory(test_dir,target_size=(image_size,image_size),batch_size=64,class_mode='categorical',shuffle=False)
